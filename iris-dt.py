@@ -9,7 +9,12 @@ import seaborn as sns
 import pandas as pd
 import numpy as np
 
-#load the dataset 
+import dagshub
+dagshub.init(repo_owner='Sumit-Autade', repo_name='dagshub-demo', mlflow=True)
+
+mlflow.set_tracking_uri("https://dagshub.com/Sumit-Autade/dagshub-demo.mlflow")
+
+#load the dataset
 iris = load_iris()
 X = iris.data
 y = iris.target
